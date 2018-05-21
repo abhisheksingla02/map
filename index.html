@@ -1,0 +1,39 @@
+<!-- html for neighbourhoood map-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/map.css" rel="stylesheet">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title></title>
+</head>
+<body>
+    <section class="container">
+        <article class="row">
+            <article class="col-md-4">
+                <h3>ENTER TEXT TO FILTER LOCATIONS</h3><input data-bind="value:selectedloc,event:{keyup:test},valueUpdate:'afterkeydown'" placeholder="type to search here">
+                <h3>LIST DISPLAYS FILTERED ITEMS</h3>
+                <ul data-bind="foreach:markers">
+                    <li data-bind="text:title,visible:li,click: change"></li>
+                </ul>
+                <hr>
+            </article>
+            <article class="col-md-8">
+                <h1>MAP OF MY FAVOURITE PLACES</h1>
+                <div id="map"></div>
+            </article>
+        </article>
+        <div>
+            <h2 data-bind="text: error"></h2>
+        </div>
+    </section>
+    <script src="js/jquery.js">
+    </script>
+    <script src="js/app.js">
+    </script>
+    <script src="js/knockout.js">
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyDFPqkDGgZIpmSUtRF-QhkEr9c_buc5mBU&v=1&callback=initMap" onerror="iferror()">
+    </script>
+</body>
+</html>
